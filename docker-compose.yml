@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: db-course
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: course
+    ports:
+      - 3306:3306
+

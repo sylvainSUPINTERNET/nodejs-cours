@@ -3,6 +3,9 @@
 const express = require('express');
 const routerProduct = express.Router();
 
+const productService = require('../../services/product/product.service');
+
+
 // Exemple for bonus :
 
 
@@ -11,16 +14,12 @@ const logger = function (req, res, next) {
     next();
 };
 
-const getProduct = (req, res, next) => {
-    res.status(200).json({"product": "chat"})
-}
 
 
-routerProduct.get('/', function(req, res, next) {
-    res.status(200).json({"product": "home"});
-});
+routerProduct.get('/:id', productService.getProduct);
+routerProduct.post('/', productService.createProduct);
+routerProduct.get('/', productService.getAllProducts);
 
-routerProduct.get('/bonus', logger, getProduct);
 
 
 /**

@@ -19,3 +19,7 @@
  *
  *
  */
+
+
+// DB avec Sequelize
+// https://sequelize.org/master/index.html
